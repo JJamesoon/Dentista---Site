@@ -121,7 +121,7 @@ export function Index() {
       {/* HERO */}
       <section
         id="top"
-        className="relative overflow-hidden bg-[linear-gradient(rgba(8,20,22,0.32),rgba(8,20,22,0.42)),url('/Home.png')] bg-cover bg-top"
+        className="relative overflow-hidden bg-[linear-gradient(rgba(8,20,22,0.32),rgba(8,20,22,0.42)),url('/Home.png')] bg-cover bg-center sm:bg-top"
       >
         <div className="mx-auto flex min-h-[560px] max-w-7xl items-center justify-center px-5 pb-8 pt-40 text-center sm:min-h-[640px] sm:px-6 sm:pt-52 md:min-h-[720px] md:pb-14 md:pt-64">
           <div className="mx-auto max-w-2xl">
