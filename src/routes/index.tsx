@@ -345,14 +345,14 @@ export function Index() {
       {/* DEPOIMENTOS / FOTO PACIENTE */}
       <section className="bg-gradient-to-br from-primary/10 via-secondary/40 to-background py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-2">
-          <div className="flex aspect-[3/2] w-full items-center justify-center rounded-3xl bg-primary p-10 shadow-xl">
+          <div className="overflow-hidden rounded-3xl shadow-xl aspect-[3/2] w-full">
             <img
-              src="/Logo.png"
-              alt="Logo Soares Odontologia"
+              src="/Cliente_final.png"
+              alt="Paciente Soares Odontologia"
               loading="lazy"
               width={900}
               height={520}
-              className="max-h-full max-w-full object-contain"
+              className="h-full w-full object-cover"
             />
           </div>
           <div>
