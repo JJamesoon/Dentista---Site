@@ -92,7 +92,7 @@ const services = [
   { icon: Users, title: "Ortodontia", desc: "Aparelhos e acompanhamento para alinhamento dental e melhora da mordida." },
 ];
 
-function Index() {
+export function Index() {
   const [openPro, setOpenPro] = useState<Professional | null>(null);
 
   return (
