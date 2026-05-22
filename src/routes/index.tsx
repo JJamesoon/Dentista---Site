@@ -242,6 +242,14 @@ function Index() {
             <h2 className="mt-4 text-4xl font-semibold tracking-tight">
               O cuidado começa antes da cadeira odontológica.
             </h2>
+            <div className="mt-6 flex items-start gap-4 rounded-2xl border border-primary/20 bg-primary/5 p-5">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/15 text-2xl">
+                🦷
+              </div>
+              <p className="text-base font-medium text-foreground">
+                Está usando fio dental? <span className="text-primary">Porque aqui nós priorizamos o básico.</span>
+              </p>
+            </div>
             <p className="mt-4 text-muted-foreground">
               Da recepção ao pós-tratamento, cada detalhe é pensado para você se sentir confortável,
               ouvido e seguro. Nada de pressa. Nada de protocolos frios.
