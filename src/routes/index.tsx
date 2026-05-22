@@ -193,15 +193,17 @@ export function Index() {
       {/* VÍDEO + ATENDIMENTO */}
       <section className="py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
-          <div className="relative overflow-hidden rounded-3xl shadow-xl">
-            <div className="aspect-video w-full">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/Y6FpFFTLDF0?rel=0"
-                title="Conheça a Soares Odontologia"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+          <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-3xl border-2 border-dashed border-primary/30 bg-primary/5 shadow-xl">
+            <div className="px-10 text-center">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/15 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <p className="text-base font-semibold text-foreground">Espaço reservado para vídeo</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Um vídeo explicativo sobre como cuidar dos seus dentes em casa, ou apresentando a clínica — <span className="text-primary font-medium">o cliente decide.</span>
+              </p>
             </div>
           </div>
           <div>
