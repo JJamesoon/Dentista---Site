@@ -127,27 +127,27 @@ export function Index() {
           className="absolute inset-0 h-full w-full object-cover object-[50%_5%] sm:object-top"
         />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(8,20,22,0.32),rgba(8,20,22,0.42))]" />
-        <div className="relative z-10 mx-auto flex min-h-[560px] max-w-7xl items-end justify-center px-5 pb-16 pt-40 text-center sm:min-h-[640px] sm:px-6 sm:pt-52 md:min-h-[900px] md:pb-24 md:pt-96">
+        <div className="relative z-10 mx-auto flex min-h-[460px] max-w-7xl items-end justify-center px-5 pb-6 pt-28 text-center sm:min-h-[640px] sm:px-6 sm:pb-16 sm:pt-52 md:min-h-[900px] md:pb-24 md:pt-96">
           <div className="mx-auto max-w-2xl">
-            <Badge variant="secondary" className="mb-4 rounded-full bg-background/85 px-3 py-1 text-[11px] sm:mb-5 sm:px-4 sm:py-1.5 sm:text-xs">
+            <Badge variant="secondary" className="mb-3 rounded-full bg-background/85 px-3 py-1 text-[10px] sm:mb-5 sm:px-4 sm:py-1.5 sm:text-xs">
               <Heart className="mr-1.5 h-3 w-3" /> Odontologia desde 1961
             </Badge>
-            <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+            <h1 className="text-xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
               Sorrisos que <span className="text-primary-foreground">cuidam de você</span> por inteiro.
             </h1>
-            <div className="mt-6 flex flex-wrap justify-center gap-3 sm:mt-7">
-              <Button asChild className="rounded-full px-5 text-xs sm:px-7 sm:text-sm">
+            <div className="mt-4 flex flex-wrap justify-center gap-2 sm:mt-7 sm:gap-3">
+              <Button asChild className="rounded-full px-4 text-[11px] sm:px-7 sm:text-sm">
                 <a href="#contato">Marcar avaliação</a>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="rounded-full border-white/70 bg-white/5 px-5 text-xs text-white hover:bg-white hover:text-foreground sm:px-7 sm:text-sm"
+                className="rounded-full border-white/70 bg-white/5 px-4 text-[11px] text-white hover:bg-white hover:text-foreground sm:px-7 sm:text-sm"
               >
                 <a href="#equipe">Conheça nossa equipe</a>
               </Button>
             </div>
-            <div className="mx-auto mt-6 grid max-w-md grid-cols-3 gap-2 border-t border-white/25 pt-3 text-white sm:mt-7 sm:max-w-lg sm:gap-3 sm:pt-4">
+            <div className="mx-auto mt-4 grid max-w-md grid-cols-3 gap-2 border-t border-white/25 pt-2 text-white sm:mt-7 sm:max-w-lg sm:gap-3 sm:pt-4">
               <Stat value="65+" label="anos de história" />
               <Stat value="3" label="gerações de dentistas" />
               <Stat value="4.9★" label="avaliação Google" />
@@ -197,22 +197,22 @@ export function Index() {
       {/* VÍDEO + ATENDIMENTO */}
       <section className="py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
-          <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-3xl border-2 border-dashed border-primary/30 bg-primary/5 shadow-xl">
-            <div className="px-10 text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/15 text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+          <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-primary/30 bg-primary/5 shadow-xl">
+            <div className="px-6 text-center">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/15 text-primary sm:mb-4 sm:h-16 sm:w-16">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-8 sm:w-8" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
-              <p className="text-base font-semibold text-foreground">Espaço reservado para vídeo</p>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="text-xs font-semibold text-foreground sm:text-base">Espaço reservado para vídeo</p>
+              <p className="mt-1 text-[11px] text-muted-foreground sm:mt-2 sm:text-sm">
                 Um vídeo explicativo sobre como cuidar dos seus dentes em casa, ou apresentando a clínica — <span className="text-primary font-medium">o cliente decide.</span>
               </p>
             </div>
           </div>
           <div>
             <Badge variant="outline" className="rounded-full">Atendimento que acolhe</Badge>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight">
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-4xl">
               O cuidado começa antes da cadeira odontológica.
             </h2>
             <div className="mt-6 flex items-start gap-4 rounded-2xl border border-primary/20 bg-primary/5 p-5">
@@ -290,7 +290,7 @@ export function Index() {
                     onClick={() => setOpenPro(p)}
                     className="group mx-auto block w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card text-center shadow-sm transition hover:-translate-y-1 hover:shadow-xl sm:max-w-none"
                   >
-                    <div className="relative flex h-48 items-center justify-center overflow-hidden sm:h-auto sm:aspect-[5/4]">
+                    <div className="relative flex h-32 items-center justify-center overflow-hidden sm:h-auto sm:aspect-[5/4]">
                       <img
                         src={p.image}
                         alt=""
@@ -306,15 +306,15 @@ export function Index() {
                         loading="lazy"
                         width={320}
                         height={320}
-                        className="relative h-24 w-24 rounded-full border-4 border-background object-cover shadow-xl transition duration-500 group-hover:scale-105 sm:h-32 sm:w-32 md:h-36 md:w-36"
+                        className="relative h-16 w-16 rounded-full border-4 border-background object-cover shadow-xl transition duration-500 group-hover:scale-105 sm:h-32 sm:w-32 md:h-36 md:w-36"
                       />
                     </div>
-                    <div className="p-4 sm:p-5">
-                      <p className="text-xs font-medium uppercase tracking-wider text-primary">
+                    <div className="p-3 sm:p-5">
+                      <p className="text-[10px] font-medium uppercase tracking-wider text-primary sm:text-xs">
                         {p.specialty}
                       </p>
-                      <h3 className="mt-1 text-base font-semibold sm:text-lg">{p.name}</h3>
-                      <p className="mt-1 text-xs text-muted-foreground">{p.cro}</p>
+                      <h3 className="mt-0.5 text-sm font-semibold sm:text-lg">{p.name}</h3>
+                      <p className="mt-0.5 text-[11px] text-muted-foreground sm:text-xs">{p.cro}</p>
                     </div>
                   </button>
                 </DialogTrigger>
