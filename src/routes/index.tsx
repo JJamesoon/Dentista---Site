@@ -93,7 +93,7 @@ const services = [
 ];
 
 export function Index() {
-  const [openPro, setOpenPro] = useState<Professional | null>(null);
+  const [, setOpenPro] = useState<Professional | null>(null);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -119,11 +119,15 @@ export function Index() {
       </header>
 
       {/* HERO */}
-      <section
-        id="top"
-        className="relative overflow-hidden bg-[linear-gradient(rgba(8,20,22,0.32),rgba(8,20,22,0.42)),url('/Home.png')] bg-cover bg-center sm:bg-top"
-      >
-        <div className="mx-auto flex min-h-[560px] max-w-7xl items-center justify-center px-5 pb-8 pt-40 text-center sm:min-h-[640px] sm:px-6 sm:pt-52 md:min-h-[720px] md:pb-14 md:pt-64">
+      <section id="top" className="relative overflow-hidden">
+        <img
+          src="/Home.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_5%] sm:object-top"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(8,20,22,0.32),rgba(8,20,22,0.42))]" />
+        <div className="relative z-10 mx-auto flex min-h-[560px] max-w-7xl items-end justify-center px-5 pb-16 pt-40 text-center sm:min-h-[640px] sm:px-6 sm:pt-52 md:min-h-[900px] md:pb-24 md:pt-96">
           <div className="mx-auto max-w-2xl">
             <Badge variant="secondary" className="mb-4 rounded-full bg-background/85 px-3 py-1 text-[11px] sm:mb-5 sm:px-4 sm:py-1.5 sm:text-xs">
               <Heart className="mr-1.5 h-3 w-3" /> Odontologia desde 1961
