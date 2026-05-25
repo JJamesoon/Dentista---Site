@@ -94,6 +94,14 @@ const services = [
 
 export function Index() {
   const [, setOpenPro] = useState<Professional | null>(null);
+  const [nome, setNome] = useState("");
+  const [mensagem, setMensagem] = useState("");
+
+  function enviarWhatsApp(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const texto = `Olá! Me chamo *${nome}*.\n\n${mensagem}`;
+    window.open(`https://wa.me/5551999875692?text=${encodeURIComponent(texto)}`, "_blank");
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -119,23 +127,23 @@ export function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative overflow-hidden">
+      <section id="top" className="relative mt-[68px] overflow-hidden sm:mt-0">
         <img
           src="/Home.png"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_5%] sm:object-top"
+          className="absolute inset-0 h-full w-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(8,20,22,0.32),rgba(8,20,22,0.42))]" />
-        <div className="relative z-10 mx-auto flex min-h-[460px] max-w-7xl items-end justify-center px-5 pb-6 pt-28 text-center sm:min-h-[640px] sm:px-6 sm:pb-16 sm:pt-52 md:min-h-[900px] md:pb-24 md:pt-96">
+        <div className="relative z-10 mx-auto flex min-h-[240px] max-w-7xl items-end justify-center px-5 pb-4 pt-4 text-center sm:min-h-[640px] sm:px-6 sm:pb-16 sm:pt-52 md:min-h-[900px] md:pb-24 md:pt-96">
           <div className="mx-auto max-w-2xl">
-            <Badge variant="secondary" className="mb-3 rounded-full bg-background/85 px-3 py-1 text-[10px] sm:mb-5 sm:px-4 sm:py-1.5 sm:text-xs">
+            <Badge variant="secondary" className="mb-1.5 rounded-full bg-background/85 px-3 py-1 text-[10px] sm:mb-5 sm:px-4 sm:py-1.5 sm:text-xs">
               <Heart className="mr-1.5 h-3 w-3" /> Odontologia desde 1961
             </Badge>
-            <h1 className="text-xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+            <h1 className="text-base font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
               Sorrisos que <span className="text-primary-foreground">cuidam de você</span> por inteiro.
             </h1>
-            <div className="mt-4 flex flex-wrap justify-center gap-2 sm:mt-7 sm:gap-3">
+            <div className="mt-2 flex flex-wrap justify-center gap-2 sm:mt-7 sm:gap-3">
               <Button asChild className="rounded-full px-4 text-[11px] sm:px-7 sm:text-sm">
                 <a href="#contato">Marcar avaliação</a>
               </Button>
@@ -147,7 +155,7 @@ export function Index() {
                 <a href="#equipe">Conheça nossa equipe</a>
               </Button>
             </div>
-            <div className="mx-auto mt-4 grid max-w-md grid-cols-3 gap-2 border-t border-white/25 pt-2 text-white sm:mt-7 sm:max-w-lg sm:gap-3 sm:pt-4">
+            <div className="mx-auto mt-7 hidden max-w-md grid-cols-3 gap-2 border-t border-white/25 pt-4 text-white sm:mt-7 sm:grid sm:max-w-lg sm:gap-3">
               <Stat value="65+" label="anos de história" />
               <Stat value="3" label="gerações de dentistas" />
               <Stat value="4.9★" label="avaliação Google" />
@@ -250,17 +258,17 @@ export function Index() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6 lg:grid-cols-4">
             {services.map((s) => (
               <div
                 key={s.title}
-                className="group rounded-3xl border border-border bg-card p-7 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+                className="group rounded-2xl border border-border bg-card p-4 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg sm:rounded-3xl sm:p-7"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
-                  <s.icon className="h-6 w-6" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground sm:h-12 sm:w-12 sm:rounded-2xl">
+                  <s.icon className="h-4 w-4 sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                <h3 className="mt-3 text-sm font-semibold sm:mt-5 sm:text-xl">{s.title}</h3>
+                <p className="mt-1 text-[11px] text-muted-foreground sm:mt-2 sm:text-sm">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -393,24 +401,39 @@ export function Index() {
                 <ContactLine icon={Clock} text="Seg a Sex · 8h às 20h · Sáb 9h às 14h" />
               </div>
             </div>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" onSubmit={enviarWhatsApp}>
               <input
                 className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
                 placeholder="Seu nome"
-              />
-              <input
-                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
-                placeholder="Telefone / WhatsApp"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                required
               />
               <textarea
                 rows={4}
                 className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
                 placeholder="Como podemos te ajudar?"
+                value={mensagem}
+                onChange={(e) => setMensagem(e.target.value)}
               />
               <Button type="submit" size="lg" className="w-full rounded-full">
                 Quero ser atendido
               </Button>
             </form>
+          </div>
+
+          {/* MAPA */}
+          <div className="mt-10 overflow-hidden rounded-2xl border border-border">
+            <iframe
+              title="Localização Soares Odontologia"
+              src="https://maps.google.com/maps?q=Rua+Sahyde+Abrahão,+238,+Centro,+Tramandaí,+RS,+Brasil&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="320"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
@@ -422,6 +445,19 @@ export function Index() {
           <p>Feito com <Heart className="inline h-3 w-3 fill-primary text-primary" /> para o seu sorriso</p>
         </div>
       </footer>
+
+      {/* WHATSAPP FAB */}
+      <a
+        href="https://wa.me/5551999875692"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Fale pelo WhatsApp"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition hover:scale-110 hover:shadow-xl"
+      >
+        <svg viewBox="0 0 24 24" className="h-7 w-7 fill-white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
     </div>
   );
 }
@@ -429,8 +465,8 @@ export function Index() {
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div>
-      <p className="text-lg font-semibold text-current sm:text-xl md:text-2xl">{value}</p>
-      <p className="mt-0.5 text-[9px] leading-tight text-current/80 sm:text-[10px]">{label}</p>
+      <p className="text-sm font-semibold text-current sm:text-xl md:text-2xl">{value}</p>
+      <p className="mt-0.5 text-[8px] leading-tight text-current/80 sm:text-[10px]">{label}</p>
     </div>
   );
 }
